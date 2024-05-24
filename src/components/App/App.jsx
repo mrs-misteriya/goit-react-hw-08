@@ -1,10 +1,8 @@
-import { Suspense, lazy } from "react";
-import { Routes, Route } from "reac";
+import { Suspense, lazy, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
 import Layout from "../Layout/Layout";
 import { useDispatch } from "react-redux";
-import { useEffect } from "react";
-
-import { fetchContacts } from "../../redux/contacts/operations";
+import { refreshUser } from "../../redux/auth/operations";
 
 const HomePage = lazy(() => import("../../pages/HomePage/HomePage"));
 const RegistrationPage = lazy(
@@ -22,18 +20,18 @@ export default function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchContacts());
+    dispatch(refreshUser());
   }, [dispatch]);
 
   return (
     <Layout>
       <Suspense fallback={null}>
         <Routes>
-          <Route path="/" element={<HomePage />}></Route>
-          <Route path="/register" element={<RegistrationPage />}></Route>
-          <Route path="/login" element={<LoginPage />}></Route>
-          <Route path="/contacts" element={<ContactsPage />}></Route>
-          <Route path="*" element={<NotFoundPage />}></Route>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/register" element={<RegistrationPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/contacts" element={<ContactsPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
     </Layout>
