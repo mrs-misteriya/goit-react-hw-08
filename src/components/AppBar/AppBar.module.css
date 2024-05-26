@@ -6,10 +6,10 @@
     font-weight: 600;
     text-transform: uppercase;
     height: 80px;
-    padding: 0 40px;
+    padding: 0 50px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     box-shadow:  0 2px 8px 1px #477081;
     background-color:  #bedcdf;
-    color: rgb(250, 250, 252);    
+    color: #fff; 
 }

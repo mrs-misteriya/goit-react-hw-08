@@ -7,7 +7,12 @@ export default function Layout({ children }) {
     <div className={css.container}>
       <AppBar />
       {children}
-      <Toaster position="top-center" reverseOrder={false} />
+      <Toaster position="top-center" reverseOrder={false} 
+      toastOptions={{
+        className: '',
+        style: {
+          color: '#796f6d',
+        }}}/>
     </div>
   );
 }

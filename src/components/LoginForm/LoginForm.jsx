@@ -12,7 +12,7 @@ export default function LoginForm() {
   const handleSubmit = (values, action) => {
     dispatch(login(values))
       .unwrap()
-      .then(() => toast.success())
+      .then(() => toast.success("Success!!!"))
       .catch((error) => {
         console.log(error);
         return toast.error("Incorrect email address or password");
@@ -44,8 +44,7 @@ export default function LoginForm() {
         </label>
         </div>
                 
-        <Button variant="contained" type="submit">Log In</Button>
-  
+        <Button variant="contained" type="submit">Log In</Button>  
       </Form>
     </Formik>
   );

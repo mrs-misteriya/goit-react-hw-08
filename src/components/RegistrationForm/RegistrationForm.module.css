@@ -1,7 +1,7 @@
 .form {
     display: flex;
     flex-direction: column;
-align-items: center;
+    align-items: center;
     width: 200px;
     padding: 30px;
     border: 1px solid rgba(40, 67, 73, 0.493);
@@ -12,6 +12,5 @@ align-items: center;
     display: flex;
     flex-direction: column;
     padding-bottom: 20px;
-
     }
     

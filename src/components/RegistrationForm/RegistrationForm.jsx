@@ -2,6 +2,7 @@ import { Formik, Form, Field } from "formik";
 import { useDispatch } from "react-redux";
 import { register } from "../../redux/auth/operations";
 import { useId } from "react";
+import { toast } from "react-hot-toast";
 import Button from '@mui/material/Button';
 import css from "./RegistrationForm.module.css";
 
@@ -13,9 +14,14 @@ export default function RegistrationForm() {
   const passwordId = useId();
 
   const handleSubmit = (values, actions) => {
-    dispatch(register(values));
-    actions.resetForm();
-  };
+    dispatch(register(values)).unwrap()
+    .then(() => toast.success("Success!"))
+    .catch(() => {
+      return toast.error("Enter valid information or this email address is already registered!");
+    });
+    actions.resetForm()
+  }
+
 
   return (
     <Formik
