@@ -4,6 +4,7 @@ import { deleteContact } from "../../redux/contacts/operations";
 import css from "./Contact.module.css";
 import { FaUser } from "react-icons/fa6";
 import { FaPhone } from "react-icons/fa6";
+import Button from '@mui/material/Button';
 
 export default function Contact({ data: { id, name, number } }) {
   const dispatch = useDispatch();
@@ -20,14 +21,11 @@ export default function Contact({ data: { id, name, number } }) {
           {number}
         </p>
       </div>
-      <button
-        className={css.btn}
-        onClick={() => {
+      
+      <Button variant="contained" type="submit"  onClick={() => {
           dispatch(deleteContact(id));
-        }}
-      >
-        Delete
-      </button>
+        }}>Delete</Button>
+
     </div>
   );
 }

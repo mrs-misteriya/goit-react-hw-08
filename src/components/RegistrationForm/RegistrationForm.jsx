@@ -2,6 +2,7 @@ import { Formik, Form, Field } from "formik";
 import { useDispatch } from "react-redux";
 import { register } from "../../redux/auth/operations";
 import { useId } from "react";
+import Button from '@mui/material/Button';
 import css from "./RegistrationForm.module.css";
 
 export default function RegistrationForm() {
@@ -25,20 +26,30 @@ export default function RegistrationForm() {
       }}
       onSubmit={handleSubmit}
     >
-      <Form autoComplete="off" className={css.container}>
-        <label htmlFor={userId}>
+      <Form autoComplete="off" className={css.form}>
+        <div className={css.fields}> 
+          <label htmlFor={userId}>
           User
           <Field type="text" name="name" id={userId} />
         </label>
-        <label htmlFor={emailId}>
+        </div>
+
+        <div className={css.fields}>
+          <label htmlFor={emailId}>
           Email
           <Field type="email" name="email" id={emailId} />
         </label>
-        <label htmlFor={passwordId}>
+        </div>
+
+        <div className={css.fields}>
+          <label htmlFor={passwordId}>
           Password
           <Field type="password" name="password" id={passwordId} />
         </label>
-        <button type="submit">Registration</button>
+        </div>
+
+        <Button variant="contained" type="submit">Registration</Button>
+      
       </Form>
     </Formik>
   );

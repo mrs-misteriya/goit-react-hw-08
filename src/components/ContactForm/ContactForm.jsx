@@ -2,6 +2,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
 import { addContact } from "../../redux/contacts/operations";
+import Button from '@mui/material/Button';
 import css from "../ContactForm/ContactForm.module.css";
 
 const ContactSchema = Yup.object().shape({
@@ -55,9 +56,8 @@ export default function ContactForm() {
           <ErrorMessage className={css.error} name="number" component="span" />
         </div>
 
-        <button className={css.btn} type="submit">
-          Add contact
-        </button>
+        <Button variant="contained" type="submit">Add contact</Button>
+      
       </Form>
     </Formik>
   );
