@@ -1,12 +1,9 @@
-.header {
+.menuHeader {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 20px;
 }
 
-
-.btn{
-    padding: 0 5px;
-    height: fit-content; 
-
+.welcome{
+    text-transform: none;
 }

@@ -14,8 +14,8 @@ export default function UserMenu() {
   };
 
   return (
-    <div className={css.header}>
-      <p> Welcome, {user.name} </p>
+    <div className={css.menuHeader}>
+      <p className={css.welcome}> Welcome, {user.name} </p>
       <Button variant="contained" type="submit" onClick={handleLogout}>Log out</Button>
     </div>
   );

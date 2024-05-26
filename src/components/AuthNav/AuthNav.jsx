@@ -3,7 +3,7 @@ import css from "./AuthNav.module.css";
 
 export default function AuthNav() {
   return (
-    <div className={css.header}>
+    <div className={css.authHeader}>
       <NavLink to="/register">Register</NavLink>
       <NavLink to="/login">Log In</NavLink>
     </div>
